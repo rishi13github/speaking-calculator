@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text To Speech </title>
+    <style>
+
+     #text-to-speech{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+        }
+#text-input{ 
+    
+    height: 100px;
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+#speak-button{
+    padding: 10px;
+    font-size: 18px;
+    background-color: pink;
+    color: white;
+    border: none;
+    cursor: pointer;
+    
+
+}
+    </style>
+    
+</head>
+<body>
+    <div id="text-to-speech">
+        <input type="text" id="text-input" placeholder="Enter text to speak">
+        <button id="speak-button">Speak</button>
+      </div>
+    
+      <script>
+        const textInput = document.getElementById('input');
+        const speakButton = document.getElementById('speak-button');
+    
+        speakButton.addEventListener('click', () => {
+          const text = textInput.value;
+    
+          // Create a new SpeechSynthesisUtterance object
+          const utterance = new SpeechSynthesisUtterance(text);
+          
+      // Speak the text
+      speechSynthesis.speak(utterance);
+    });
+  </script>
+
+</body>
+</html>
